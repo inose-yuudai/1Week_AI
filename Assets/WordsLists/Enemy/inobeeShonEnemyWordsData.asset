@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9b407a6775e49eba9c610f8a177792, type: 3}
+  m_Name: inobeeShonEnemyWordsData
+  m_EditorClassIdentifier: 
+  enemyWordPairs:
+  - displayWord: "\u885D\u52D5"
+    internalWord: "\u3057\u3087\u3046\u3069\u3046"
+    voiceClip: {fileID: 8300000, guid: e19c1ad931343456fab9465ccbd0d699, type: 3}
+  - displayWord: "\u7A81\u7834"
+    internalWord: "\u3068\u3063\u3071"
+    voiceClip: {fileID: 8300000, guid: 632050aff5b024b219400488fa62aeda, type: 3}
+  - displayWord: "\u7121\u9650"
+    internalWord: "\u3080\u3052\u3093"
+    voiceClip: {fileID: 8300000, guid: 4cc368f6e2aef43e089ae069d08adfaa, type: 3}
+  - displayWord: "\u9577\u9AEA"
+    internalWord: "\u3061\u3087\u3046\u306F\u3064"
+    voiceClip: {fileID: 8300000, guid: d0beddf820cd748b6b30a234a30b3955, type: 3}
+  - displayWord: "\u610F\u8B58"
+    internalWord: "\u3044\u3057\u304D"
+    voiceClip: {fileID: 8300000, guid: 0d2b0287261d84be48815adcfcad7fcc, type: 3}
+  - displayWord: "\u6D41\u661F"
+    internalWord: "\u308A\u3085\u3046\u305B\u3044"
+    voiceClip: {fileID: 8300000, guid: 09d2436f95dbf413a931e3157ad4b613, type: 3}
+  - displayWord: "\u60C5\u666F"
+    internalWord: "\u3058\u3087\u3046\u3051\u3044"
+    voiceClip: {fileID: 8300000, guid: d32e90dcadb574c67bcf43abaf4fb45a, type: 3}
+  - displayWord: "\u767A\u898B"
+    internalWord: "\u306F\u3063\u3051\u3093"
+    voiceClip: {fileID: 8300000, guid: 3b5b25b0117794c4fabd9372b65bd3a7, type: 3}
+  - displayWord: "\u518D\u751F"
+    internalWord: "\u3055\u3044\u305B\u3044"
+    voiceClip: {fileID: 8300000, guid: 6a8741757f5e94920a3d8f71ca79c650, type: 3}
+  - displayWord: "\u767D\u9ED2"
+    internalWord: "\u3057\u308D\u304F\u308D"
+    voiceClip: {fileID: 8300000, guid: 7b6d5c97bc8af46de93718e3012a0ef3, type: 3}
+  - displayWord: "\u611F\u6027"
+    internalWord: "\u304B\u3093\u305B\u3044"
+    voiceClip: {fileID: 8300000, guid: 625471eda761945d98d86e5c8165d309, type: 3}
+  - displayWord: "\u672C\u8CEA"
+    internalWord: "\u307B\u3093\u3057\u3064"
+    voiceClip: {fileID: 8300000, guid: 36dd0bad5ab99442fbc22a1cb7dd3608, type: 3}
+  - displayWord: "\u6210\u529F"
+    internalWord: "\u305B\u3044\u3053\u3046"
+    voiceClip: {fileID: 8300000, guid: 3823b1946af6249ccaa6cb005a19b379, type: 3}
+  - displayWord: "\u5C0A\u91CD"
+    internalWord: "\u305D\u3093\u3061\u3087\u3046"
+    voiceClip: {fileID: 8300000, guid: c4c30177a3d284da381f7c9d891245ad, type: 3}
+  - displayWord: "\u62E1\u5927"
+    internalWord: "\u304B\u304F\u3060\u3044"
+    voiceClip: {fileID: 8300000, guid: 13398dd6b3cb842c29d021b09a9f847d, type: 3}
+  - displayWord: "\u77DB\u76FE"
+    internalWord: "\u3080\u3058\u3085\u3093"
+    voiceClip: {fileID: 8300000, guid: 24f19aa94adf94da283992b74bbc0590, type: 3}
+  - displayWord: "\u7206\u767A"
+    internalWord: "\u3070\u304F\u306F\u3064"
+    voiceClip: {fileID: 8300000, guid: 32f7d43312008454ebec9b8f43323830, type: 3}
+  - displayWord: "\u5909\u8C8C"
+    internalWord: "\u3078\u3093\u307C\u3046"
+    voiceClip: {fileID: 8300000, guid: 86c5e7f1e83b6416f810151b38dd7ee3, type: 3}
+  - displayWord: "\u52B9\u679C"
+    internalWord: "\u3053\u3046\u304B"
+    voiceClip: {fileID: 8300000, guid: 29011c30fe34d4efdaf50f0ec93022cc, type: 3}
+  - displayWord: "\u99C6\u52D5"
+    internalWord: "\u304F\u3069\u3046"
+    voiceClip: {fileID: 8300000, guid: 75e6f04db88504793ab0a7044e665578, type: 3}
+  - displayWord: "\u60C5\u7DD2"
+    internalWord: "\u3058\u3087\u3046\u3061\u3087"
+    voiceClip: {fileID: 8300000, guid: 63bff782bd5914063a24edc6165302ef, type: 3}
+  specialEnemyWordPairs:
+  - displayWord: "\u533A\u5225"
+    internalWord: "\u304F\u3079\u3064"
+    voiceClip: {fileID: 8300000, guid: f88a6c5428fe14053866423dfb4b082e, type: 3}
+  - displayWord: "\u533A\u5225"
+    internalWord: "\u304F\u3079\u3064"
+    voiceClip: {fileID: 8300000, guid: f88a6c5428fe14053866423dfb4b082e, type: 3}
+  criticalEnemyWordPairs:
+  - displayWord: "\u30D3\u30C3\u30B0\u30DE\u30A6\u30B9"
+    internalWord: "\u30D3\u30C3\u30B0\u30DE\u30A6\u30B9"
+    voiceClip: {fileID: 0}
+  - displayWord: "\u30D3\u30C3\u30B0\u30DE\u30A6\u30B9"
+    internalWord: "\u30D3\u30C3\u30B0\u30DE\u30A6\u30B9"
+    voiceClip: {fileID: 0}
