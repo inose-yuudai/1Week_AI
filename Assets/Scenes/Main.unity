@@ -6290,7 +6290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74967805ff96487db62a611f780eaf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiKey: 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
   chatManager: {fileID: 1684603892}
   positiveClip: {fileID: 8300000, guid: 393dbf69985e1470b8bb15734d895673, type: 3}
   negativeClip: {fileID: 8300000, guid: 7466c002e3501477392d076445809c08, type: 3}

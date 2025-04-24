@@ -44,9 +44,8 @@ public class ChatCommenter : MonoBehaviour
     }
 
     [Header("API設定")]
-    [SerializeField]
     private string apiKey =
-        "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";
+        "APIキー入れる";
 
     [Header("参照設定")]
     public ChatManager chatManager;
@@ -202,10 +201,7 @@ public class ChatCommenter : MonoBehaviour
 
             Debug.Log($"スコア {score} によりシーン遷移：{nextScene}");
             SceneManager.LoadScene(nextScene);
-        
+
     }
-  void Update()
-  {
-    Debug.Log(score);
-  }
+
 }
