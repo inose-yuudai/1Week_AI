@@ -1,0 +1,27 @@
+変更履歴
+V1.00 初版リリース
+V1.01 HowToSetUpファイルの追加
+V1.02 
+・Builit-In対応版を追加
+・LaserBeamShaderのShaderをSpriteUnlit→Unlitへ変更
+・DashLineShaderのShaderをSpriteUnlit→Unlitへ変更
+・一部プロパティの命名の修正
+・「ShaderGraph」フォルダにいたShaderを、ECUIフォルダに変更
+・PatternShaderのSquareのサイズの最小値が見えなくなるように修正
+・FullScreenMovingSpeedLineShaderのクリップされる範囲を調整
+V1.03
+＜修正＞
+・PatternShaderのPatternTypeが「Square」の場合に、わずかに欠けたピクセルが出ないように修正★
+・ゲーム開始直後にWaterAndLavaShaderが正方形に並んでしまっていたバグを修正★
+・「RandomFillHexagonShader」、「RandomFillRectangleTileShader」がゲーム開始直後の一瞬だけ、ランダムな模様にならないバグを修正
+・「GlitchShader」、「OverlayGlitchShader」に、エフェクトが掛かる頻度を変更出来るよう修正
+＜追加＞
+・色ごとにディゾルブ可能な「Color Dissolve Shader」を追加
+・黒帯が画面上下or左右から狭まっていく「BlackBeltShader」を追加
+・ロード中などによくあるクルクルする「CircleGradationShader」を追加
+・ブラーがよりキレイに出る「GaussianBlurShader」を追加。
+V1.04
+＜修正＞
+・マテリアル名：BinartyRainScrollをBinaryRainScrollに修正
+・スクリプトのコメントのスペルミスの修正
+・OverlayGaussianBlurのワーニングが出なくなるように修正

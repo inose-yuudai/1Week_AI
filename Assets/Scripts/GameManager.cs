@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using DG.Tweening;
+using Fungus;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,111 +13,126 @@ public class GameManager : MonoBehaviour
     public float timeLimit = 60.0f;
     private float currentTime;
 
-    // 参照
+    [Header("参照設定")]
     public HiraganaTextGenerator hiraganaGenerator;
+    public ChatManager chatManager;
+    public HiraganaBoardController boardController;
+
+    public ChatCommenter chatCommenter; // ← インスペクタでセット忘れずに！
+
     public TMP_Text taskText;
-    public TMP_Text scoreText;
     public TMP_Text timeText;
-    public TMP_Text resultText;
+
+    public HiraganaTaskDatabase taskDatabase; // ← ScriptableObjectで管理するお題集
+    private HiraganaTask currentTaskData;
+
+    public bool timeStarted = false;
 
     void Start()
     {
-        // 初期設定
-        SetNewTask("こんにちは");
         currentTime = timeLimit;
         currentScore = 0;
-        // UpdateScoreText();
-        UpdateTimeText();
 
-        // 既存のhiraganaGeneratorフィールドをそのまま利用
         if (hiraganaGenerator != null)
         {
-            hiraganaGenerator.OnTextGenerated += HandleGeneratedText;
+            hiraganaGenerator.OnTextGenerated += OnGeneratedText;
         }
     }
 
-    void HandleGeneratedText(string generatedText)
+    public void StartGame()
     {
-        // 必要に応じてここでログを表示したり、チェック処理を自動で呼ぶ
-        Debug.Log("生成されたテキスト: " + generatedText);
-        //   CheckResult(); // 自動で正誤チェックしたい場合はこの行を残す
-    }
-
-    // スコアを更新
-    void UpdateScoreText()
-    {
-        if (scoreText != null)
-        {
-            scoreText.text = "スコア: " + currentScore;
-        }
+        timeStarted = true;
     }
 
     void Update()
     {
-        // 制限時間のカウントダウン
-        currentTime -= Time.deltaTime;
-        UpdateTimeText();
-
-        if (currentTime <= 0)
+        if (timeStarted)
         {
-            // ゲームオーバー処理
-            GameOver();
+            currentTime -= Time.deltaTime;
+            UpdateTimeText();
+
+            if (currentTime <= 0)
+            {
+                chatCommenter.CheckSceneTransition();
+            }
         }
     }
 
-    // お題を設定し、テキストに反映
+    void OnGeneratedText(string generatedText)
+    {
+        Debug.Log("生成されたテキスト: " + generatedText);
+
+        if (chatManager != null)
+        {
+            chatManager.AddChatMessage(
+                generatedText,
+                chatManager.playerBubblePrefab,
+                chatManager.playerStartPos,
+                true
+            );
+        }
+    }
+
     public void SetNewTask(string task)
     {
         currentTask = task;
         if (taskText != null)
         {
-            taskText.text = "お題: " + task;
+            taskText.text = task;
         }
     }
 
-    // 判定処理
-    public void CheckResult(string generatedText)
+    public void SetRandomTask()
     {
-      
-        if (generatedText == currentTask)
+        if (taskDatabase == null || taskDatabase.tasks.Length == 0)
         {
-            Debug.Log("正解です！");
-            currentScore += 10;
-            UpdateScoreText();
-            DisplayResultMessage("正解です！");
+            Debug.LogWarning("タスクデータベースが未設定、または空です");
+            return;
         }
-        else
+
+        currentTaskData = taskDatabase.tasks[Random.Range(0, taskDatabase.tasks.Length)];
+
+        // UI表示用の説明文（見た目だけ）
+        SetNewTask(currentTaskData.taskText);
+
+        // ハイライトだけ反映
+        boardController.HighlightDefaultPositionsOnly(
+            currentTaskData.highlightText,
+            new Color(1.0f, 0.713f, 0.757f)
+        );
+        boardController.lastHighlightedText = currentTaskData.highlightText;
+
+        // あとで送信したい文字列だけ保存
+        if (!string.IsNullOrEmpty(currentTaskData.inputText))
         {
-            DisplayResultMessage("不正解です！");
+            currentTask = currentTaskData.inputText;
         }
     }
 
-    // 残り時間を更新
+
     void UpdateTimeText()
     {
         if (timeText != null)
         {
-            timeText.text = "残り時間: " + Mathf.Max(0, Mathf.FloorToInt(currentTime)) + "秒";
+            timeText.text = " " + Mathf.Max(0, Mathf.FloorToInt(currentTime)) + "";
         }
     }
 
-    // 結果を表示
-    void DisplayResultMessage(string message)
+
+    public void GenerateTextFromCurrentTask()
     {
-        if (resultText != null)
+        if (hiraganaGenerator != null && !string.IsNullOrEmpty(currentTask))
         {
-            resultText.text = message;
+            hiraganaGenerator.GenerateText(currentTask, null, true); // currentTaskはhighlightText
+            Debug.Log("gameから呼び出し");
         }
     }
-
-    // ゲームオーバー処理
-    void GameOver()
+    public void SendCurrentInputText()
     {
-        if (resultText != null)
+        if (hiraganaGenerator != null && !string.IsNullOrEmpty(currentTask))
         {
-            resultText.text = "ゲームオーバー！";
+            hiraganaGenerator.GenerateAndSendPlayerMessage(currentTask);
+            Debug.Log("入力を送信しました: " + currentTask);
         }
-
-        // 必要に応じて、再スタートやメニューへの遷移を追加
     }
 }

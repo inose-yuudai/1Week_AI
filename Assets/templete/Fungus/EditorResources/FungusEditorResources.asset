@@ -30,7 +30,7 @@ MonoBehaviour:
     pro: {fileID: 2800000, guid: 2f17490d993c84bd7872ef6588ffba47, type: 3}
   fungus_mushroom:
     free: {fileID: 0}
-    pro: {fileID: 2800000, guid: be5807b6cc8c441679f0d6185df44992, type: 3}
+    pro: {fileID: 0}
   up:
     free: {fileID: 2800000, guid: 8f1242ad894201f43b2b6d52fd990f77, type: 3}
     pro: {fileID: 2800000, guid: 2a76a781db2994b33b83cd84b8835da7, type: 3}
