@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67134c9aed3754d73b049df32bfbcb8d, type: 3}
+  m_Name: NewHiraganaTask 2
+  m_EditorClassIdentifier: 
+  taskText: "\u3057\u3064\u3082\u3093\u3092\u3057\u3066\u307F\u3088\u3046"
+  highlightText: "\u305F\u308C\u304B\u3059\u304D"
+  inputText: "\u305F\u308C\u304B\u3059\u304D"
